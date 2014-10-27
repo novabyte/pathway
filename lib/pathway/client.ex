@@ -46,10 +46,15 @@ defmodule Pathway.Client do
 
   defp parse_resp({:error, _} = resp), do: resp
   defp parse_resp({:ok, {{"200", _}, _, body, _, _}}) do
-    {:ok, Poison.decode!(body)}
+    Poison.decode(body)
   end
   defp parse_resp({:ok, {_, _, body, _, _}}) do
-    {:error, Poison.decode!(body)}
+    case Poison.decode(body) do
+      {:ok, data} ->
+        # successful decode but invalid request
+        {:error, data}
+      ex -> ex
+    end
   end
 
 end
