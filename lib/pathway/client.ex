@@ -35,4 +35,21 @@ defmodule Pathway.Client do
     {:reply, reply, state}
   end
 
+  def parse_req(data, path), do: request(Poison.encode(data), path)
+
+  defp request({:error, _} = result, _path), do: result
+  defp request({:ok, json}, path) do
+    req  = [path, 'POST', [], "data=#{json}"]
+    resp = GenServer.call(__MODULE__, req)
+    parse_resp(resp)
+  end
+
+  defp parse_resp({:error, _} = resp), do: resp
+  defp parse_resp({:ok, {{"200", _}, _, body, _, _}}) do
+    {:ok, Poison.decode!(body)}
+  end
+  defp parse_resp({:ok, {_, _, body, _, _}}) do
+    {:error, Poison.decode!(body)}
+  end
+
 end
