@@ -3,7 +3,10 @@ defmodule Pathway.Mixfile do
 
   def project do
     [app: :pathway,
+     name: "Pathway",
      version: "0.1.0-dev",
+     source_url: "https://github.com/novabyte/pathway",
+     homepage_url: "http://hexdocs.pm/pathway/",
      elixir: "~> 1.0",
      deps: deps,
      package: [
@@ -23,6 +26,8 @@ defmodule Pathway.Mixfile do
 
   defp deps do
     [{:poison, "~> 1.2"},
-     {:fusco, git: "https://github.com/esl/fusco.git"}]
+     {:fusco, git: "https://github.com/esl/fusco.git"},
+     {:earmark, "~> 0.1", only: :dev},
+     {:ex_doc, "~> 0.6", only: :dev}]
   end
 end
