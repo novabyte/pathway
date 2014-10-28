@@ -1,2 +1,4 @@
-%{"fusco": {:git, "https://github.com/esl/fusco.git", "78650a15cf244065ab3ee74dafb8efabfd73575d", []},
+%{"earmark": {:hex, :earmark, "0.1.10"},
+  "ex_doc": {:hex, :ex_doc, "0.6.1"},
+  "fusco": {:git, "https://github.com/esl/fusco.git", "78650a15cf244065ab3ee74dafb8efabfd73575d", []},
   "poison": {:hex, :poison, "1.2.0"}}

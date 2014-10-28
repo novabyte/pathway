@@ -16,6 +16,7 @@ rel/example_project
 ### Elixir ###
 /_build
 /deps
+/docs
 erl_crash.dump
 *.ez
 
