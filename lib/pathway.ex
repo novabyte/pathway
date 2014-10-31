@@ -9,9 +9,9 @@ defmodule Pathway do
   tickets and email history, and then automatically segment users based on that
   data.
 
-  The Trak.io API is made up of `alias`, `annotate`, `identify`, `page_view` and
-  `track` actions. These actions are available in the client as functions with
-  the same names.
+  The Trak.io API is made up of `alias`, `annotate`, `identify`, and `track`
+  actions. These actions are available in the client as functions with the same
+  names.
 
   ## Configuration
 
@@ -32,7 +32,7 @@ defmodule Pathway do
   `Pathway.Client.start_link`. The `Pathway.Client` is a `GenServer` whose
   process is linked to the connection's `pid`. If the connection dies the
   `Pathway.Client` will also die. For this reason it's recommended to
-  supervise the client like so:
+  supervise the client in your application:
 
       # within your Application start callback
       children = [
@@ -42,7 +42,7 @@ defmodule Pathway do
       Supervisor.start_link(children, opts)
 
   Alternatively, if you don't want to supervise the client or you're
-  experimenting in the iex console you can manually start the client like so:
+  experimenting in the iex console you can manually start the client:
 
       Pathway.Client.start_link()
 
