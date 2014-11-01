@@ -1,9 +1,9 @@
 Pathway
 =======
 
-An Erlang/Elixir client for the [Trak.io](http://trak.io/) [REST API](http://docs.trak.io/).
+An Erlang/Elixir client for the Trak.io [REST API](http://docs.trak.io/).
 
-Trak.io is a service that allows you to save details about your users (people) and their behaviour (events). The service can take in different types of customer data, such as feature usage, payments, support tickets and email history, and then automatically segment users based on that data.
+[Trak.io](http://trak.io/) is a service that allows you to save details about your users (people) and their behaviour (events). The service can take in different types of customer data, such as feature usage, payments, support tickets and email history, and then automatically segment users based on that data.
 
 Pathway is created and maintained by Chris Molozian (@novabyte) and contributors.
 <br/>
@@ -84,13 +84,15 @@ Pathway.identity(user.id, user)
 Pathway.track(user.id, "user signed up")
 ```
 
-For more detailed examples on using Pathway check out the [documentation](http://hexdocs.pm/pathway/) and Trak.io's [main documentation](https://docs.trak.io/).
+For more detailed examples on using Pathway check out the [documentation](http://hexdocs.pm/pathway/) and Trak.io's [API documentation](https://docs.trak.io/).
 
 __NOTE__: This client is complete but under development, any feedback and bug reports are welcome.
 
 ### Usage with Erlang ###
 
-Elixir code compiles down directly to BEAM bytecode and is completely compatible with Erlang without requiring a "translation layer", runtime introspection or any kind of compatibility layer. Working with this library from Erlang is as simple as remembering the module prefix created by the Elixir compiler and calling the module's function.
+Elixir code compiles down directly to BEAM bytecode and is completely compatible with Erlang without requiring a "translation layer", runtime introspection or any kind of compatibility layer.
+
+Working with this library from Erlang is as simple as remembering the module prefix created by the Elixir compiler and calling the module's function.
 
 An equivalent Erlang example to the one above:
 
@@ -103,7 +105,7 @@ UserId = maps:get(User, "id")
 
 ## Developer Notes ##
 
-This codebase uses the [`fusco`](https://github.com/esl/fusco) to make HTTP requests to the Trak.io API and [`poison`](https://github.com/devinus/poison) to handle JSON serialization.
+This codebase uses [`fusco`](https://github.com/esl/fusco) to make HTTP requests to the Trak.io API and [`poison`](https://github.com/devinus/poison) to handle JSON serialization.
 
 ### Errors ###
 
