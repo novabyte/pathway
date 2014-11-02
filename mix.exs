@@ -4,7 +4,7 @@ defmodule Pathway.Mixfile do
   def project do
     [app: :pathway,
      name: "Pathway",
-     version: "0.1.0-dev",
+     version: "0.2.0-dev",
      source_url: "https://github.com/novabyte/pathway",
      homepage_url: "http://hexdocs.pm/pathway/",
      elixir: "~> 1.0",
