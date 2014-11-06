@@ -12,7 +12,7 @@ Code licensed under the [Apache License v2.0](http://www.apache.org/licenses/LIC
 
 ## Download ##
 
-Pathway is available on [Hex.pm](https://hex.pm/).
+Pathway is available on [Hex.pm](https://hex.pm/packages/pathway).
 
 Adding Pathway to your application takes two steps:
 
@@ -20,7 +20,7 @@ Adding Pathway to your application takes two steps:
 
     ```elixir
     def deps do
-      [{:pathway, "~> 0.1.0"}]
+      [{:pathway, "~> 0.1"}]
     end
     ```
 
@@ -32,7 +32,7 @@ Adding Pathway to your application takes two steps:
     end
     ```
 
-## Example ##
+## Usage ##
 
 You'll need an API key to use the Trak.io service so you must create an account before you can configure the client.
 
@@ -49,7 +49,7 @@ config :pathway,
 
 Only the __apikey__ is a required configuration property. The other properties are initialised with default values.
 
-### Usage ###
+### Example ###
 
 The client creates a connection to the Trak.io API server on `Pathway.Client.start_link`. The `Pathway.Client` is a `GenServer` whose process is linked to the connection's `pid`. If the connection dies the `Pathway.Client` will also die. For this reason it's recommended to supervise the client in your application:
 
@@ -86,7 +86,7 @@ Pathway.track(user.id, "user signed up")
 
 For more detailed examples on using Pathway check out the [documentation](http://hexdocs.pm/pathway/) and Trak.io's [API documentation](https://docs.trak.io/).
 
-__NOTE__: This client is complete but under development, any feedback and bug reports are welcome.
+__Note__: This client is complete but under development, any feedback and bug reports are welcome.
 
 ### Usage with Erlang ###
 
